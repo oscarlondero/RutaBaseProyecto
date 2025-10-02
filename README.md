@@ -202,6 +202,70 @@ Las plantillas están en [`/templates`](./templates) listas para copiar y comple
 
 ---
 
+
+
+---
+
+## Estimación y Costos
+
+Esta guía resume **métodos**, **pasos** y **fórmulas** para estimar **esfuerzo, plazo y costo**. Usá más de un enfoque y triangulá.
+
+### 1) Enfoques de estimación
+- **Analogía / Experiencia**: comparar con proyectos similares (ajustar por complejidad/alcance).  
+- **Top‑down**: a partir de un presupuesto/plazo global, repartir por módulos. Útil en etapas tempranas.  
+- **Bottom‑up (WBS)**: descomponer en tareas pequeñas, estimar cada una y sumar. Mayor precisión.  
+- **Tres puntos (PERT)**: estimar **Optimista (O)**, **Más probable (M)**, **Pesimista (P)** por tarea.  
+  - Duración esperada: \( E = \frac{O + 4M + P}{6} \)  
+  - Desvío estándar: \( \sigma = \frac{P - O}{6} \)  
+  - Varianza: \( \sigma^2 = \left(\frac{P - O}{6}\right)^2 \)  
+- **Paramétricos**: usar una tasa conocida (p.ej., *story points* → horas vía *velocity*; o LOC, pantallas, casos de uso).  
+- **Planning Poker / T‑Shirt sizing**: estimación relativa para priorizar; luego convertir a horas.
+
+### 2) De esfuerzo a costo
+Definir **tarifas** y **costos no laborales**:
+- Tarifa/hora por rol (Dev, QA, UX, Líder técnico, PM).  
+- Costos fijos/variables: licencias, dominios, hosting/nube, integraciones, viajes, equipos.  
+- **Fórmula base**:  
+  \[ \text{Costo Total} = \sum (\text{Horas por rol} \times \text{Tarifa}) + \text{Costos no laborales} + \text{Contingencia} + \text{Margen} \]
+
+**Contingencia**: 10–30% según riesgo/volatilidad.  
+**Margen** (si corresponde a servicios): 10–25% típico educativo/comercial.
+
+### 3) Paso a paso recomendado
+1. **Armar WBS** (ver plantilla en `/templates/wbs.md`).  
+2. Estimar cada tarea con **PERT** o **horas directas** (si el equipo tiene alta experiencia).  
+3. Calcular **esfuerzo total** por rol, **plazo** (en función de disponibilidad/solapamiento) y **costo**.  
+4. Agregar **contingencia** según el **log de riesgos**.  
+5. Revisar con el demandante: **alcance ↔ costo ↔ plazo**, negociar recortes/incrementos.  
+6. Publicar **Presupuesto vX** con supuestos y exclusiones.
+
+### 4) Conversión de Story Points a costo (scrum)
+- **Velocity** del equipo: p.ej., 20 puntos / sprint (2 semanas).  
+- 1 sprint = 2 semanas = ~80 h por dev (ejemplo).  
+- **Horas por punto** ≈ (horas totales del equipo en el sprint) / (puntos completados).  
+- **Costo por punto** = (costo del sprint) / (puntos completados).  
+  - Útil para presupuestos iterativos/rolling wave.
+
+### 5) Curva S y control
+- Contrastar **acumulado planificado vs. real** en horas/costos (Curva S).  
+- Métricas: **CPI** (Cost Performance Index) y **SPI** (Schedule Performance Index) si usan valor ganado.  
+- Replanificar con datos reales cada sprint (rolling forecast).
+
+### 6) Ejemplo breve (educativo)
+**Módulo “Pedidos”** (ABM + lista + filtros + detalle + impresión).  
+- WBS (resumen): Análisis (6h), UX (8h), Backend (24h), Frontend (20h), Pruebas (10h), Deploy (4h).  
+- Total ≈ 72h. Tarifas: Dev $10/h, QA $8/h, UX $9/h, Líder/PM $12/h.  
+- Distribución (ejemplo): Dev 44h, QA 10h, UX 8h, PM 10h.  
+- **Costo laboral** ≈ 44*10 + 10*8 + 8*9 + 10*12 = $440 + $80 + $72 + $120 = **$712**  
+- Costos no laborales: dominio/hosting proporcional $30.  
+- Contingencia 15%: (712+30)*0.15 = $111.3  
+- **Total estimado** ≈ $712 + $30 + $111.3 = **$853.3** (redondear).
+
+> Consejos: (a) registrar **supuestos** (p.ej., “sin pasarela de pagos”), (b) explicitar **exclusiones**, (c) versionar el **presupuesto** si cambia el alcance.
+
+---
+
+
 ## CI base (Continuous Integration)
 
 Ejemplos de workflows en [`/.github/workflows`](.github/workflows):
@@ -281,4 +345,4 @@ jobs:
 - Sumá plantillas o checklists que usen otros docentes/equipos.
 
 ## Licencia
-Proyecto público con objetivo educativo.
+Elegí una licencia y colócala aquí (ej. MIT, CC BY-SA, etc.).
