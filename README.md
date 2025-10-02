@@ -283,4 +283,4 @@ Definir **tarifas** y **costos no laborales**:
 - Sumá plantillas o checklists que usen otros docentes/equipos.
 
 ## Licencia
-Elegí una licencia y colócala aquí (ej. MIT, CC BY-SA, etc.).
+![License](https://img.shields.io/badge/license-Educational-green)
