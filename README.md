@@ -43,18 +43,18 @@ Este esquema te ayuda a **alinear expectativas**, **planificar por fases**, **en
 **Organización interna:**
 - Crear repositorio (GitHub/GitLab), tablero (Trello/Jira), carpeta compartida (Drive).
 - Definir roles mínimos: Líder/PM, Líder técnico, Dev, QA, UX/Funcional (pueden solaparse en equipos chicos).
-- Acordar ceremonias: daily 10–15 min, planning semanal, demo quincenal.
+- Acordar encuentros: daily 10–15 min, planning semanal, demo quincenal.
 
 ---
 
 ### 1) Descubrimiento rápido (2–3 días)
 **Objetivo:** Entender procesos y restricciones.  
 **Entregables al demandante:**
-- Mapa de proceso (BPMN/UML simple o bullets).
-- Lista priorizada de requerimientos (MoSCoW).
+- Mapa de proceso (MER/UML simple o bullets/Viñetas).
+- Lista priorizada de requerimientos.
 
 **Organización interna:**
-- Armar Backlog (épicas → historias de usuario con criterios de aceptación).
+- Armar Backlog (épicas → historias de usuario (necesidades) con criterios de aceptación).
 - Registrar supuestos y riesgos (log de riesgos).
 
 ---
@@ -76,12 +76,12 @@ Este esquema te ayuda a **alinear expectativas**, **planificar por fases**, **en
 **Objetivo:** Bajar a arquitectura y estándares.  
 **Entregables al demandante (resumen ejecutivo):**
 - Arquitectura mínima (diagrama simple: frontend, backend, DB, integraciones).
-- No-funcionales clave (seguridad, rendimiento, auditoría, backup).
+- No-funcionales clave (seguridad, rendimiento, auditoría, backup, compatibilidad).
 
 **Organización interna:**
-- Stack y convenciones (nombres, ramas git, code style, ESLint/PSR/PEP8, etc.).
+- Stack y convenciones (nombres, ramas git, code style.).
 - Esquema de datos (DER inicial), migraciones base.
-- Pipelines: CI/CD simple (build + tests + deploy a staging).
+- Pipelines: CI/CD simple (build + tests + deploy a staging). Integraciones con  entornos.
 - Definition of Done (DoD): code + tests + revisión + documentación mínima + demo.
 
 ---
@@ -95,7 +95,7 @@ Este esquema te ayuda a **alinear expectativas**, **planificar por fases**, **en
 **Organización interna:**
 - Sprint Planning: capacidad, historias comprometidas, criterios de aceptación.
 - Daily 10–15 min (bloqueos, plan del día).
-- Code reviews (PRs chicos).
+- Code reviews (codigos chicos).
 - QA continuo: pruebas exploratorias + checklist de regresión.
 - Métricas: lead time, bugs abiertos, % historias completadas.
 
@@ -120,7 +120,7 @@ Este esquema te ayuda a **alinear expectativas**, **planificar por fases**, **en
   - URL de producción + usuario demo.
   - Manual de usuario (PDF o página).
   - Manual técnico corto (infra/variables/env, jobs, backup/restore).
-  - Plan de soporte (qué, quién, ventanas).
+  - Plan de soporte (qué, quién, contactos).
 - Capacitación express (video 10–15 min o sesión breve).
 
 **Organización interna:**
@@ -132,7 +132,7 @@ Este esquema te ayuda a **alinear expectativas**, **planificar por fases**, **en
 ### 7) Cierre y mejora (1–2 días)
 **Objetivo:** Aprender y dejar lista la siguiente iteración.  
 **Entregables al demandante:**
-- Reporte final: objetivos logrados, métricas, pendientes y roadmap.
+- Reporte final: objetivos logrados, métricas y pendientes.
 
 **Organización interna:**
 - Retrospectiva (qué salió bien, qué mejorar, acciones).
@@ -155,7 +155,7 @@ Este esquema te ayuda a **alinear expectativas**, **planificar por fases**, **en
 | 8 | Deploy            | Paquete de entrega + capacitación                |
 | 9 | Cierre            | Reporte final + retro + roadmap                  |
 
-> Si el tiempo es menor, compactá: (1) Kickoff+Descubrimiento, (2) Diseño (funcional+técnico), (3) 2 sprints, (4) UAT+Deploy, (5) Cierre.
+> Si el tiempo es menor, compactar: (1) Kickoff+Descubrimiento, (2) Diseño (funcional+técnico), (3) 2 sprints, (4) UAT+Deploy, (5) Cierre.
 
 ---
 
@@ -180,7 +180,7 @@ Las plantillas están en [`/templates`](./templates) listas para copiar y comple
 ## Organización del equipo
 
 - **Roles:** PM/Líder (agenda/cliente), Tech Lead (arquitectura), Dev(s), QA/Funcional.  
-- **Ceremonias:** planning (60’), daily (15’), review+retro por sprint (45’).  
+- **Encuentros:** planning (60’), daily (15’), review+retro por sprint (45’).  
 - **Git:** `main` estable, `dev` integración, ramas cortas `feature/*`, PR obligatorio.  
 - **Tablero:** Backlog → Ready → In Progress → Code Review → QA → Done.  
 - **Métricas sanas:** issues resueltos/sprint, bugs abiertos, lead time, cobertura de criterios de aceptación.
@@ -199,10 +199,6 @@ Las plantillas están en [`/templates`](./templates) listas para copiar y comple
 ## Variantes según contexto
 - **Proyecto individual:** mismas fases, pero daily asíncrono (nota diaria en el tablero) y review con mentor/cliente.  
 - **Proyecto grande:** dividir por “módulos verticales” (ABM Productos, Pedidos, Facturación), cada uno con mini-sprints y demos propias.
-
----
-
-
 
 ---
 
