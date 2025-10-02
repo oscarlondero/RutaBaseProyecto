@@ -1,2 +1,284 @@
-# RutaBaseProyecto
-guia de ruta de proyectos base
+# Ruta Base de Proyecto — TUP UTN
+
+Guía práctica para egresados/as de la Tecnicatura Universitaria en Programación (UTN) para **dar forma, organizar y entregar** proyectos de desarrollo, ya sea **individualmente** o en **equipos**. Este README funciona como referencia viva y punto único de consulta.
+
+---
+
+## Tabla de contenidos
+- [Visión general](#visión-general)
+- [Ruta base de proyecto](#ruta-base-de-proyecto)
+  - [0) Kickoff](#0-kickoff-½1-día)
+  - [1) Descubrimiento rápido](#1-descubrimiento-rápido-23-días)
+  - [2) Diseño funcional](#2-diseño-funcional-35-días)
+  - [3) Diseño técnico](#3-diseño-técnico-24-días)
+  - [4) Construcción iterativa (Sprints)](#4-construcción-iterativa-sprints-de-12-semanas)
+  - [5) QA + UAT](#5-qa--uat-1-semana)
+  - [6) Despliegue y transferencia](#6-despliegue-y-transferencia-23-días)
+  - [7) Cierre y mejora](#7-cierre-y-mejora-12-días)
+- [Cronograma sugerido (8–10 semanas)](#cronograma-sugerido-810-semanas)
+- [Plantillas (templates)](#plantillas-templates)
+- [Organización del equipo](#organización-del-equipo)
+- [Paquete mínimo para el demandante](#paquete-mínimo-para-el-demandante-cada-hito)
+- [Variantes según contexto](#variantes-según-contexto)
+- [CI base (Continuous Integration)](#ci-base-continuous-integration)
+- [Cómo usar este repositorio](#cómo-usar-este-repositorio)
+- [Contribuir](#contribuir)
+- [Licencia](#licencia)
+
+---
+
+## Visión general
+Este esquema te ayuda a **alinear expectativas**, **planificar por fases**, **entregar evidencias** y **mejorar continuamente**, manteniendo calidad técnica y claridad con el demandante del proyecto.
+
+---
+
+## Ruta base de proyecto
+
+### 0) Kickoff (½–1 día)
+**Objetivo:** Alinear expectativas y alcance inicial.  
+**Entregables al demandante:**
+- Project Brief 1-página (problema, objetivo, alcance y fuera de alcance, métricas, stakeholders, canales y frecuencia).
+- Agenda de trabajo (fechas de hitos y demos).
+
+**Organización interna:**
+- Crear repositorio (GitHub/GitLab), tablero (Trello/Jira), carpeta compartida (Drive).
+- Definir roles mínimos: Líder/PM, Líder técnico, Dev, QA, UX/Funcional (pueden solaparse en equipos chicos).
+- Acordar ceremonias: daily 10–15 min, planning semanal, demo quincenal.
+
+---
+
+### 1) Descubrimiento rápido (2–3 días)
+**Objetivo:** Entender procesos y restricciones.  
+**Entregables al demandante:**
+- Mapa de proceso (BPMN/UML simple o bullets).
+- Lista priorizada de requerimientos (MoSCoW).
+
+**Organización interna:**
+- Armar Backlog (épicas → historias de usuario con criterios de aceptación).
+- Registrar supuestos y riesgos (log de riesgos).
+
+---
+
+### 2) Diseño funcional (3–5 días)
+**Objetivo:** Acordar qué hará el sistema desde el punto de vista del negocio/usuario.  
+**Entregables al demandante:**
+- Historias de usuario con criterios de aceptación (GWT: Given-When-Then).
+- Wireframes/prototipo de baja fidelidad (3–5 pantallas clave).
+- Reglas de negocio y casos borde.
+
+**Organización interna:**
+- Definition of Ready (DoR) para dar por “listo para desarrollar”.
+- Criterios de priorización (valor, riesgo, dependencia).
+
+---
+
+### 3) Diseño técnico (2–4 días)
+**Objetivo:** Bajar a arquitectura y estándares.  
+**Entregables al demandante (resumen ejecutivo):**
+- Arquitectura mínima (diagrama simple: frontend, backend, DB, integraciones).
+- No-funcionales clave (seguridad, rendimiento, auditoría, backup).
+
+**Organización interna:**
+- Stack y convenciones (nombres, ramas git, code style, ESLint/PSR/PEP8, etc.).
+- Esquema de datos (DER inicial), migraciones base.
+- Pipelines: CI/CD simple (build + tests + deploy a staging).
+- Definition of Done (DoD): code + tests + revisión + documentación mínima + demo.
+
+---
+
+### 4) Construcción iterativa (Sprints de 1–2 semanas)
+**Objetivo:** Entregar valor en pequeños incrementos demostrables.  
+**Entregables al demandante (por sprint):**
+- Demo funcional (video corto o sesión en vivo).
+- Changelog y feedback recogido.
+
+**Organización interna:**
+- Sprint Planning: capacidad, historias comprometidas, criterios de aceptación.
+- Daily 10–15 min (bloqueos, plan del día).
+- Code reviews (PRs chicos).
+- QA continuo: pruebas exploratorias + checklist de regresión.
+- Métricas: lead time, bugs abiertos, % historias completadas.
+
+---
+
+### 5) QA + UAT (1 semana)
+**Objetivo:** Validación de calidad y del usuario (User Acceptance Testing).  
+**Entregables al demandante:**
+- Plan de pruebas UAT + Guía de uso (breve).
+- Acta de conformidad o lista de observaciones con plazos.
+
+**Organización interna:**
+- Test funcional, de seguridad básica (authZ/authN, inyección), y rendimiento mínimo.
+- Corrección de observaciones priorizadas.
+
+---
+
+### 6) Despliegue y transferencia (2–3 días)
+**Objetivo:** Poner en producción y dejar todo documentado.  
+**Entregables al demandante:**
+- Paquete de entrega:
+  - URL de producción + usuario demo.
+  - Manual de usuario (PDF o página).
+  - Manual técnico corto (infra/variables/env, jobs, backup/restore).
+  - Plan de soporte (qué, quién, ventanas).
+- Capacitación express (video 10–15 min o sesión breve).
+
+**Organización interna:**
+- Tag de versión (v1.0.0), backup inicial, monitoreo básico.
+- Ticketera de soporte (SLA simple).
+
+---
+
+### 7) Cierre y mejora (1–2 días)
+**Objetivo:** Aprender y dejar lista la siguiente iteración.  
+**Entregables al demandante:**
+- Reporte final: objetivos logrados, métricas, pendientes y roadmap.
+
+**Organización interna:**
+- Retrospectiva (qué salió bien, qué mejorar, acciones).
+- Archivar proyecto y limpiar pendientes técnicos.
+
+---
+
+## Cronograma sugerido (8–10 semanas)
+
+| Semana | Hito / foco        | Entregables clave                               |
+|---:|---|---|
+| 0 | Kickoff           | Brief + agenda + set-up herramientas             |
+| 1 | Descubrimiento    | Mapa proceso + requerimientos priorizados        |
+| 2 | Diseño funcional  | Historias + wireframes + reglas                  |
+| 3 | Diseño técnico    | Arquitectura + DER + DoD/DoR + CI base           |
+| 4 | Sprint 1          | Demo 1 + feedback + changelog                    |
+| 5 | Sprint 2          | Demo 2 + feedback + hardening                    |
+| 6 | Sprint 3          | Demo 3 (MVP completo)                            |
+| 7 | QA/UAT            | Plan UAT + acta/observaciones                    |
+| 8 | Deploy            | Paquete de entrega + capacitación                |
+| 9 | Cierre            | Reporte final + retro + roadmap                  |
+
+> Si el tiempo es menor, compactá: (1) Kickoff+Descubrimiento, (2) Diseño (funcional+técnico), (3) 2 sprints, (4) UAT+Deploy, (5) Cierre.
+
+---
+
+## Plantillas (templates)
+
+Las plantillas están en [`/templates`](./templates) listas para copiar y completar:
+- `project_brief.md`
+- `user_story.md`
+- `moscow_prioritization.md`
+- `risk_log.md`
+- `meeting_minutes.md`
+- `uat_plan.md`
+- `qa_checklist.md`
+- `changelog.md`
+- `delivery_package.md`
+- `retrospective.md`
+
+> **Historias de usuario:** “Como [rol] quiero [función] para [beneficio]” + Criterios GWT (Dado/Cuando/Entonces). Se usan para planificar, implementar y probar.
+
+---
+
+## Organización del equipo
+
+- **Roles:** PM/Líder (agenda/cliente), Tech Lead (arquitectura), Dev(s), QA/Funcional.  
+- **Ceremonias:** planning (60’), daily (15’), review+retro por sprint (45’).  
+- **Git:** `main` estable, `dev` integración, ramas cortas `feature/*`, PR obligatorio.  
+- **Tablero:** Backlog → Ready → In Progress → Code Review → QA → Done.  
+- **Métricas sanas:** issues resueltos/sprint, bugs abiertos, lead time, cobertura de criterios de aceptación.
+
+---
+
+## Paquete mínimo para el demandante (cada hito)
+1. Documento breve (1–2 páginas) con decisiones, alcance y próximos pasos.  
+2. Demo o capturas (evidencia tangible).  
+3. Changelog (qué cambió y por qué).  
+4. Riesgos/impedimentos (top 3 con plan de mitigación).  
+5. Fecha del próximo hito.
+
+---
+
+## Variantes según contexto
+- **Proyecto individual:** mismas fases, pero daily asíncrono (nota diaria en el tablero) y review con mentor/cliente.  
+- **Proyecto grande:** dividir por “módulos verticales” (ABM Productos, Pedidos, Facturación), cada uno con mini-sprints y demos propias.
+
+---
+
+## CI base (Continuous Integration)
+
+Ejemplos de workflows en [`/.github/workflows`](.github/workflows):
+
+### PHP (Composer + PHPUnit + PHP-CS-Fixer)
+```yaml
+name: ci-php
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: composer install --no-interaction --prefer-dist
+      - name: Lint/Style
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff
+      - name: Unit tests
+        run: vendor/bin/phpunit --testsuite Unit
+```
+
+### Node (npm + Jest + ESLint)
+```yaml
+name: ci-node
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test -- --ci
+```
+
+### .NET (build + test)
+```yaml
+name: ci-dotnet
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet restore
+      - run: dotnet build --configuration Release --no-restore
+      - run: dotnet test --no-build --verbosity normal
+```
+
+> Consejo: ejecutá estas pipelines en *push* a `dev` y en *PR* hacia `main`. Para staging, agregá un job “deploy-staging” que dependa de los tests.
+
+---
+
+## Cómo usar este repositorio
+
+1. **Crear un repo nuevo** y copiar este contenido.  
+2. Completar [`templates/project_brief.md`](./templates/project_brief.md).  
+3. Crear el **Backlog** con historias usando [`templates/user_story.md`](./templates/user_story.md).  
+4. Configurar el tablero y ramas Git (`main`, `dev`, `feature/*`).  
+5. Activar la **CI base** con los workflows provistos.  
+6. Hacer **demos periódicas** y mantener el **changelog** por sprint.  
+7. Llegado el momento de UAT/Deploy, usar las plantillas de `uat_plan.md` y `delivery_package.md`.
+
+---
+
+## Contribuir
+- Proponé mejoras mediante PRs.
+- Mantené los ejemplos simples y aplicables a contexto UTN.
+- Sumá plantillas o checklists que usen otros docentes/equipos.
+
+## Licencia
+Elegí una licencia y colócala aquí (ej. MIT, CC BY-SA, etc.).
