@@ -271,14 +271,14 @@ Definir **tarifas** y **costos no laborales**:
 2. Completar [`templates/project_brief.md`](./templates/project_brief.md).  
 3. Crear el **Backlog** con historias usando [`templates/user_story.md`](./templates/user_story.md).  
 4. Configurar el tablero y ramas Git (`main`, `dev`, `feature/*`).  
-5. Activar la **CI base** con los workflows provistos.  
+5. Usar los workflows provistos.  
 6. Hacer **demos periódicas** y mantener el **changelog** por sprint.  
 7. Llegado el momento de UAT/Deploy, usar las plantillas de `uat_plan.md` y `delivery_package.md`.
 
 ---
 
 ## Contribuir
-- Proponé mejoras mediante PRs.
+- Proponé mejoras.
 - Mantené los ejemplos simples y aplicables a contexto UTN.
 - Sumá plantillas o checklists que usen otros docentes/equipos.
 
