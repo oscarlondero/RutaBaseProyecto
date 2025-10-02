@@ -279,8 +279,7 @@ Definir **tarifas** y **costos no laborales**:
 
 ## Contribuir
 - Proponé mejoras.
-- Mantené los ejemplos simples y aplicables a contexto UTN.
-- Sumá plantillas o checklists que usen otros docentes/equipos.
+- Sumá plantillas o checklists que usen otros equipos.
 
 ## Licencia
 ![License](https://img.shields.io/badge/license-Educational-green)
