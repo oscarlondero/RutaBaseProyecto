@@ -210,10 +210,7 @@ Esta guía resume **métodos**, **pasos** y **fórmulas** para estimar **esfuerz
 - **Analogía / Experiencia**: comparar con proyectos similares (ajustar por complejidad/alcance).  
 - **Top‑down**: a partir de un presupuesto/plazo global, repartir por módulos. Útil en etapas tempranas.  
 - **Bottom‑up (WBS)**: descomponer en tareas pequeñas, estimar cada una y sumar. Mayor precisión.  
-- **Tres puntos (PERT)**: estimar **Optimista (O)**, **Más probable (M)**, **Pesimista (P)** por tarea.  
-  - Duración esperada: \( E = \frac{O + 4M + P}{6} \)  
-  - Desvío estándar: \( \sigma = \frac{P - O}{6} \)  
-  - Varianza: \( \sigma^2 = \left(\frac{P - O}{6}\right)^2 \)  
+- **Tres puntos (PERT)**: estimar **Optimista (O)**, **Más probable (M)**, **Pesimista (P)** por tarea.   
 - **Paramétricos**: usar una tasa conocida (p.ej., *story points* → horas vía *velocity*; o LOC, pantallas, casos de uso).  
 - **Planning Poker / T‑Shirt sizing**: estimación relativa para priorizar; luego convertir a horas.
 
@@ -222,12 +219,12 @@ Definir **tarifas** y **costos no laborales**:
 - Tarifa/hora por rol (Dev, QA, UX, Líder técnico, PM).  
 - Costos fijos/variables: licencias, dominios, hosting/nube, integraciones, viajes, equipos.  
 - **Fórmula base**:  
-  \[ \text{Costo Total} = \sum (\text{Horas por rol} \times \text{Tarifa}) + \text{Costos no laborales} + \text{Contingencia} + \text{Margen} \]
-
+  -  Costo Total = Horas por rol x Tarifa + Costos no laborales + Contingencia + Margen
+  
 **Contingencia**: 10–30% según riesgo/volatilidad.  
 **Margen** (si corresponde a servicios): 10–25% típico educativo/comercial.
 
-### 3) Paso a paso recomendado
+### 3) Paso a paso (recomendado)
 1. **Armar WBS** (ver plantilla en `/templates/wbs.md`).  
 2. Estimar cada tarea con **PERT** o **horas directas** (si el equipo tiene alta experiencia).  
 3. Calcular **esfuerzo total** por rol, **plazo** (en función de disponibilidad/solapamiento) y **costo**.  
@@ -263,7 +260,7 @@ Definir **tarifas** y **costos no laborales**:
 
 ## Cómo usar este repositorio
 
-1. **Crear un repo nuevo** y copiar este contenido.  
+1. **Crear un repo nuevo en tu cuenta** y copiar este contenido.  
 2. Completar [`templates/project_brief.md`](./templates/project_brief.md).  
 3. Crear el **Backlog** con historias usando [`templates/user_story.md`](./templates/user_story.md).  
 4. Configurar el tablero y ramas Git (`main`, `dev`, `feature/*`).  
